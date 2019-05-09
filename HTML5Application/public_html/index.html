@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
+  
+         <script type="text/javascript"  >
+            var personagem ={
+                nome:"",
+                raca:"",
+                forca:Math.floor(Math.random() * 10),
+                destreza:Math.floor(Math.random() * 10),
+                agilidade:Math.floor(Math.random() * 10),
+                inteligencia: Math.floor(Math.random() * 10),
+                magia:0
+                 };
+                $(document).ready(function(){
+                $("#NovoPersonagem").click(function (){
+                     $("#Novo").show("");
+                      $("#CarregarPersonagem").hide();
+                     
+                 });
+                 });
+               $(document).ready(function(){
+               $("#ID_RACA").blur(function (){
+                var novopersonagem = Object.create(personagem);
+                $("#ID_Forca").val(novopersonagem.forca);
+                $("#ID_Destreza").val(novopersonagem.destreza);
+                $("#ID_Agilidade").val(novopersonagem.agilidade);
+                $("#ID_Inteligencia").val(novopersonagem.inteligencia);
+                $("#ID_Magia").val(novopersonagem.magia);
+                $("#ID_RACA").prop('disabled', 'disabled');
+             });
+             });
+             
+             
+             
+         </script>
+
+    </head>
+    <body>
+        <div id ="selecao">
+            <button id="NovoPersonagem">Novo Personangem</button>  
+            <button id="CarregarPersonagem">Carregar Personagem</button>
+        </div>
+        <div id="Caraga" style="display:nome">
+          <br>  
+        </div>
+        
+        <div id="Novo" style="display:none">
+            <br>
+            <div id="ID_div_NomePersonagem">
+                Nome do Personagem <input type="text" id="ID_NomePersonagem" name="Nome Personagem" value="" size="30" />
+            </div>
+            <div>
+                <select id="ID_RACA">
+                    <option value="Homem">Homem</option>
+                    <option value="Elfo">Elfo</option>
+                    <option value="Anao">Anão</option>
+                    <option value="orc">Orc</option>
+                    <option value="Mago">Mago</option>
+                </select>
+            </div>
+            <div>
+                <table border="1">
+                    <tbody>
+                        <tr>
+                            <td>Força: </td>
+                            <td><input type="text" id="ID_Forca" name="Forca" value="" size="10" /> </td> 
+                        </tr>
+                        <tr>
+                            <td>Destreza: </td>
+                            <td> <input type="text" id="ID_Destreza" name="Destreza" value="" size="10" /> </td> 
+                        </tr>
+                        <tr>
+                            <td>Agilidade: </td>
+                            <td> <input type="text" id="ID_Agilidade" name="Agilidade" value="" size="10" /> </td> 
+                        </tr>
+                        <tr>
+                            <td>Inteligência: </td>
+                            <td> <input type="text" id="ID_Inteligencia" name="Inteligência" value="" size="10" /> </td> 
+                        </tr>
+                        <tr>
+                            <td>Magia: </td>
+                            <td> <input type="text" id="ID_Magia" name="Inteligência" value="" size="10" /> </td> 
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <button id="salvarPersonagem">Salvar</button>   
+
+        </div>
+    </body>
+</html>
